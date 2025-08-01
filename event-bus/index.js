@@ -6,6 +6,8 @@ app.use(express.json());
 
 const port = process.env.PORT || 4000;
 
+const events = [];
+
 const services = [
   "http://localhost:3001",
   "http://localhost:3002",
@@ -14,6 +16,7 @@ const services = [
 
 app.post("/events", (req, res) => {
   const event = req.body;
+  events.push(event);
   console.log("Event Received:", event);
 
   for (const service of services) {
@@ -23,6 +26,10 @@ app.post("/events", (req, res) => {
   }
 
   res.send({ status: "OK" });
+});
+
+app.get("/events", (req, res) => {
+  res.send(events);
 });
 
 app.listen(port, () => {

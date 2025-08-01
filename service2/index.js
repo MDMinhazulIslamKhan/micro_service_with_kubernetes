@@ -94,6 +94,22 @@ app.get("/stop", (req, res) => {
   process.exit();
 });
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Service 2 listening at http://localhost:${port}`);
+  try {
+    const res = await fetch("http://localhost:4000/events");
+    const events = await res.json();
+    for (let event of events) {
+      const { origin, data: eventData } = event;
+      if (origin === "service2") {
+        data.push(eventData);
+      } else if (origin === "service1") {
+        service1Data.push(eventData);
+      } else if (origin === "service3") {
+        service3Data.push(eventData);
+      }
+    }
+  } catch (error) {
+    console.log("Failed to fetch events");
+  }
 });
