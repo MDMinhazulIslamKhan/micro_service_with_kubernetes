@@ -1,0 +1,433 @@
+{
+  "collection": {
+    "info": {
+      "name": "Microservice",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2025-08-01T12:15:03.000Z",
+      "createdAt": "2025-08-01T08:22:58.000Z",
+      "lastUpdatedBy": "27085075"
+    },
+    "item": [
+      {
+        "name": "Service 1",
+        "item": [
+          {
+            "name": "Get data",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3001/data",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3001",
+                "path": ["data"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get other service data",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3001/other-service",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3001",
+                "path": ["other-service"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Send Data in 2",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"from 1\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3001/send-to-2",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3001",
+                "path": ["send-to-2"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Send Data in 3",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"from 1\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3001/send-to-3",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3001",
+                "path": ["send-to-3"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Stop Server",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3001/stop",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3001",
+                "path": ["stop"]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Service 2",
+        "item": [
+          {
+            "name": "Get data",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3002/data",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3002",
+                "path": ["data"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get other service data",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3002/other-service",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3002",
+                "path": ["other-service"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Send Data in 1",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"from 2\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3002/send-to-1",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3002",
+                "path": ["send-to-1"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Send Data in 3",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"from 2\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3002/send-to-3",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3002",
+                "path": ["send-to-3"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Stop Server",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3002/stop",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3002",
+                "path": ["stop"]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Service 3",
+        "item": [
+          {
+            "name": "Get data",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3003/data",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3003",
+                "path": ["data"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get other service data",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3003/other-service",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3003",
+                "path": ["other-service"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Send Data in 1",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"from 3\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3003/send-to-1",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3003",
+                "path": ["send-to-1"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Send Data in 2",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"from 3\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3003/send-to-2",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3003",
+                "path": ["send-to-2"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Stop Server",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3003/stop",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3003",
+                "path": ["stop"]
+              }
+            },
+            "response": []
+          }
+        ]
+      }
+    ]
+  }
+}
