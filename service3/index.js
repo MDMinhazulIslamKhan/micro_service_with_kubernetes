@@ -1,6 +1,8 @@
+require("dotenv").config();
 const express = require("express");
+const fs = require("fs");
 const app = express();
-const port = 3003;
+const port = process.env.PORT || 3003;
 
 app.use(express.json());
 
@@ -17,6 +19,11 @@ app.get("/data", (req, res) => {
 app.post("/data", (req, res) => {
   const newData = req.body;
   data.push(newData);
+  fs.appendFile("post.log", JSON.stringify(newData) + "\n", (err) => {
+    if (err) {
+      console.error("Failed to write to log file");
+    }
+  });
   res.status(201).json(newData);
 });
 
