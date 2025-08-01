@@ -7,6 +7,8 @@ const port = process.env.PORT || 3002;
 app.use(express.json());
 
 const data = [];
+const service1Data = [];
+const service3Data = [];
 
 app.get("/", (req, res) => {
   res.send("Hello from Service 2!");
@@ -16,15 +18,43 @@ app.get("/data", (req, res) => {
   res.json(data);
 });
 
-app.post("/data", (req, res) => {
+app.post("/data", async (req, res) => {
   const newData = req.body;
   data.push(newData);
+
+  await fetch("http://localhost:4000/events", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      type: "DataCreated",
+      origin: "service2",
+      data: newData,
+    }),
+  });
+
   fs.appendFile("post.log", JSON.stringify(newData) + "\n", (err) => {
     if (err) {
       console.error("Failed to write to log file");
     }
   });
   res.status(201).json(newData);
+});
+
+app.post("/events", (req, res) => {
+  const { type, origin, data: eventData } = req.body;
+  console.log("Received Event", type);
+
+  if (origin === "service1") {
+    service1Data.push(eventData);
+  } else if (origin === "service3") {
+    service3Data.push(eventData);
+  }
+
+  res.send({});
+});
+
+app.get("/other-service", (req, res) => {
+  res.json([{ service1: service1Data }, { service3: service3Data }]);
 });
 
 app.post("/send-to-1", async (req, res) => {
